@@ -2,44 +2,67 @@
 <!--
   Name: Jack Elder
   Date Created: April 3, 2019
-  Most Recent Revision: April 3, 2019
+  Most Recent Revision: April 5, 2019
   Description: This is the home page of my portfolio website.
 -->
-<html>
+<html lang="en">
   <head>
     <title>Jack's Portfolio</title>
   </head>
 
   <body>
+  <main>
+    <header>
     <h1>Portfolio: Jack Elder</h1>
     <hr />
+    </header>
     <!--Need to add links here to projects.html, contact.html,
       and testimonials.html-->
-    <p><mark>navigation links go here</mark></p>
+    <nav>
+    <p><a href="projects.html">Projects</a></p>
+    <p><a href="contact.html">Contact Me</a></p>
+    <p><a href="testimonials.html">Testimonials</a></p>
     <hr />
+    </nav>
 
+    <section>
+    <article id="get-to-know-me">
     <h2><em>Get to Know Me</em></h2>
     <p>I am a recent graduate from the University of Minnesota with a
-      Masters of Science in Chemistry. I have also trained and worked as a
-      chemist at the University of Puget Sound and the Infectious Disease
-      Research Institute in Seattle, Washington.</p>
-    <p>I am currently pursuing a transition into a career in
-      software development.</p>
+      <b>Masters of Science</b> in <b>Chemistry</b>. I have also trained and worked as a
+      chemist at the University of Puget Sound and the <b>Infectious Disease
+      Research Institute</b> in Seattle, Washington.</p>
+    <p><span style ="background-color: lightgreen; border: thin solid black;">
+      I am currently pursuing a transition into a career in
+      software development.</span></p>
+    </article>
 
+    <article id="past-experiences">
     <h2><em>Past Experiences</em></h2>
     <p>While at the University of Puget Sound, I performed two summers
       of undergraduate research and a senior thesis in organic synthesis.
       I also worked as a Peer Advisor to assist first-year students in their
       transition to college. I have been tutoring general and organic
       chemisty for over three years and also enjoy various volunteering.</p>
-    <p>My coding experience has included one semester of Computer Science
+    <p>My
+      <span style="background-color:lightblue; border: thin solid black;">
+      coding experience</span>
+      has included one semester of Computer Science
       in Java at the University of Puget Sound, as well as online coursework
       in Python and SQL.</p>
+    </article>
 
+    <article id="hobbies">
     <h2><em>Hobbies</em></h2>
     <p>My hobbies include biking, rock climbing, sailing and reading.</p>
     <p>I also deeply enjoy cooking, for myself and others, to improve
       my own ability and to taste new dishes.</p>
+    </article>
+    </section>
+  <footer>
     <hr />
+    <p>&copy; 2019 Jack Elder. All rights reserved.</p>
+  </footer>
+  </main>
   </body>
 </html>
