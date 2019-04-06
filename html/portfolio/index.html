@@ -8,25 +8,32 @@
 <html lang="en">
   <head>
     <title>Jack's Portfolio</title>
+    <link href="styles/teststyles.css" rel="stylesheet" type="text/css" />
+    <style>
+      header {
+        background-color: darkgrey;
+      }
+    </style>
   </head>
 
   <body>
   <main>
     <header>
     <h1>Portfolio: Jack Elder</h1>
-    <hr />
+    <hr style="border: thin dotted black;"/>
     </header>
     <!--Need to add links here to projects.html, contact.html,
       and testimonials.html-->
-    <nav>
+    <nav class="border">
     <p><a href="projects.html">Projects</a></p>
     <p><a href="contact.html">Contact Me</a></p>
     <p><a href="testimonials.html">Testimonials</a></p>
-    <hr />
+    <p><a href="index.html">Home</a></p>
+    <hr style="width: 50%; border: 2px solid darkred"/>
     </nav>
 
     <section>
-    <article id="get-to-know-me">
+    <article class ="border" id="about">
     <h2><em>Get to Know Me</em></h2>
     <img src="images/portrait.jpg" alt="Portrait of Jack Elder"
       style="width: 300px;"  />
@@ -39,7 +46,7 @@
       software development.</span></p>
     </article>
 
-    <article id="past-experiences">
+    <article id="experience">
     <h2><em>Past Experiences</em></h2>
     <img src="images/bridge.jpg" alt="Photo of a bridge in Minneapolis"
       style="width: 300px;" />
@@ -103,7 +110,7 @@
     </ul>
     </article>
     </section>
-  <footer>
+  <footer style="background-color: fuchsia">
     <hr />
     <p>&copy; 2019 Jack Elder. All rights reserved.</p>
   </footer>
