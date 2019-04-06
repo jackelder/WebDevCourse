@@ -8,10 +8,31 @@
 <html lang="en">
   <head>
     <title>Jack's Portfolio</title>
-    <link href="styles/teststyles.css" rel="stylesheet" type="text/css" />
+    <link href="styles/main.css" rel="stylesheet" type="text/css" />
     <style>
-      header {
-        background-color: darkgrey;
+      caption {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-bottom: 8px;
+      }
+      table, th, td {
+        border: 1px solid #0d1f2d;
+        border-collapse: collapse;
+        padding: 5px 10px;
+      }
+      table{
+        width:90%;
+        margin: auto;
+      }
+      th{
+        background-color: #546a7b;
+        color: #f2eded;
+      }
+      tr {
+        height: 30px;
+      }
+      tr:nth-child(odd){
+        background-color: #e4c3ad;
       }
     </style>
   </head>
@@ -52,11 +73,14 @@
       style="width: 300px;" />
     <table border="5">
       <caption><em>Employment History</em></caption>
+      <thead>
       <tr>
         <th>Years</th>
         <th>Title</th>
         <th>Company</th>
       </tr>
+      </thead>
+      <tbody>
       <tr>
         <td>2019-Present</td>
         <td>Chemistry Tutor</td>
@@ -77,6 +101,7 @@
         <td>Peer Advisor</td>
         <td>University of Puget Sound</td>
       </tr>
+      </tbody>
     </table>
     <p>While at the University of Puget Sound, I performed two summers
       of undergraduate research and a senior thesis in organic synthesis.
