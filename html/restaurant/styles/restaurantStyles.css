@@ -1,0 +1,23 @@
+/*
+Name: Jack Elder
+Date Created: April 8, 2019
+Date Modified: April 8, 2019
+This css document provides the styles for the RR diner restaurant website.
+*/
+
+/*Color Scheme
+Prune: #721817
+Neon Carrot: #FA9F42
+Deep Koamaru: #2B4162
+Bottle Green: #0B6E4F
+Platinum: #E0E0E2
+*/
+header, footer{
+  background-color: #721817;
+  color: #E0E0E2;
+}
+
+footer{
+  text-align: center;
+  padding-bottom: 12px;
+}
