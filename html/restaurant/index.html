@@ -2,7 +2,7 @@
 <!--
   Name: Jack Elder
   Date Created: April 5, 2019
-  Date Modified: April 5, 2019
+  Date Modified: April 9, 2019
   This is the home page of the restaurant website for the RR diner.
 -->
 <html lang="en">
@@ -10,12 +10,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1
       shrink-to-fit=no">
-    <title>The RR Diner</title>
+    <title>The Double R Diner</title>
     <link rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous" />
     <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
+    <style>
+      section{
+        background-color: #0B6E4F;
+        padding: 24px 0px 12px 0px;
+        color: #fef9ff;
+      }
+        section p{
+        text-align:justify;
+      }
+    </style>
   </head>
 
   <body>
@@ -23,35 +33,37 @@
     <main>
       <header>
         <h4>Home Page</h4>
-        <h1><em>The RR Diner<em></h1>
+        <h1>The Double R Diner</h1>
       </header>
 
       <nav>
-        <p><a href="index.html">Home</a></p>
-        <p><a href="menu.html">Menu</a></p>
-        <p><a href="contact.html">Contact Us</a></p>
-        <hr />
+        <a class="btn pill" href="index.html">Home</a>
+        <a class="btn pill" href="menu.html">Menu</a>
+        <a class="btn pill" href="contact.html">Contact Us</a>
+        <div class="clear-float"></div>
       </nav>
 
       <section>
-        <div class="row">
-          <div class="col-lg-6">
         <img src="images/falls.jpg" alt="Photo of Snoqualmie Falls"
-          style="width: 400px;" class="img-fluid">
-          </div>
-        </div>
+          style="display: block; margin-left: auto;
+          margin-right: auto; width:50%;" class="rounded-circle";>
         <br />
-        <p>The RR Diner ("The Double R") has been a beloved member of the
-          Twin Peaks community since it was established here on Garfield
-          Street in 1980. Owned and run since then by Norma, the RR Diner
-          serves up coffee, pie, breakfast, lunch and dinner: always fresh,
-          filling and tasty American fare.</p>
+          <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+              <p>The Double R Diner has been a beloved member of the
+                Twin Peaks community since it was established here on Garfield
+                Street in 1980. Owned and run since then by Norma, the RR Diner
+                serves up coffee, pie, breakfast, lunch and dinner: always fresh,
+                filling and tasty American fare.</p>
+            </div>
+          </div>
       </section>
 
       <footer>
-        <hr />
         <p>2288 Garfield Street, Twin Peaks, Washington, 99152</p>
         <p>(509) 221-8958</p>
+        <p>&copy; 2019 Jack Elder. All rights reserved.</p>
       </footer>
     </main>
   </div>

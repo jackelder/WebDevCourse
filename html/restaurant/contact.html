@@ -2,7 +2,7 @@
 <!--
   Name: Jack Elder
   Date Created: April 5, 2019
-  Date Modified: April 5, 2019
+  Date Modified: April 9, 2019
   This is the contact page of the restaurant website for the RR diner.
 -->
 <html lang="en">
@@ -10,12 +10,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1
       shrink-to-fit=no">
-    <title>The RR Diner</title>
+    <title>The RR Diner: Contact Us</title>
     <link rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous" />
     <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
+    <style>
+      .col-form-label{
+        text-align:right;
+        padding-top:0;
+      }
+      .btn-primary{
+        color: #FA9F42;
+        background-color: #2B4162;
+        border-color: #2B4162;
+      }
+      .btn-primary:hover{
+        color:#FA9F42;
+        font-weight:bold;
+        background-color: #2B4162;
+        border-color: #2B4162;
+      }
+      .btn-primary:active{
+        color:#fef9ff;
+        font-weight:bold;
+        background-color: #2B4162;
+        border-color: #2B4162;
+      }
+      .required{
+        font-weight: bold;
+      }
+    </style>
   </head>
 
   <body>
@@ -23,66 +49,117 @@
     <main>
       <header>
         <h4>Contact Us</h4>
-        <h1><em>The RR Diner<em></h1>
+        <h1>The Double R Diner</h1>
       </header>
 
       <nav>
-        <p><a href="index.html">Home</a></p>
-        <p><a href="menu.html">Menu</a></p>
-        <p><a href="contact.html">Contact Us</a></p>
-        <hr />
+        <a class="btn pill" href="index.html">Home</a>
+        <a class="btn pill" href="menu.html">Menu</a>
+        <a class="btn pill" href="contact.html">Contact Us</a>
+        <div class="clear-float"></div>
       </nav>
 
       <section>
         <form action="submit.html" method="POST">
-          <label for="name">Name: </label>
-          <input type="text" id="name" name="name"><br /><br />
+          <div class="form-group row">
+            <label for="name" class="col-lg-4 col-form-label required">
+              Name:</label>
+            <div class="col-lg-5">
+              <input type="text" class="form-control" id="name"
+              name="name" placeholder="John Doe">
+            </div>
+            <div class="col-lg-3">
+              <p><b>Note:</b> Bold fields are required.</p>
+            </div>
+          </div>
 
-          <label for="email">Email: </label>
-          <input type="text" id="email" name="email"><br /><br />
+          <div class="form-group row">
+            <label for="email" class="col-lg-4 col-form-label required">
+              Email:</label>
+            <div class="col-lg-5">
+              <input type="text" class="form-control" id="email"
+              name="email" placeholder="johndoe@email.com">
+            </div>
+          </div>
 
-          <label for="phone">Phone: </label>
-          <input type="text" id="phone" name="phone"><br /><br />
+          <div class="form-group row">
+            <label for="phone" class="col-lg-4 col-form-label">
+              Phone:</label>
+            <div class="col-lg-5">
+              <input type="text" class="form-control" id="phone"
+              name="phone" placeholder="(123) 456-7890">
+            </div>
+          </div>
 
-          <label for="reason">Reason for Inquiry: </label>
-          <select id="reason" name="reason">
-            <option value="catering" selected>Catering</option>
-            <option value="party">Private Party</option>
-            <option value="feedback">Feedback</option>
-            <option value="other">Other</option>
-          </select><br /><br />
+          <div class="form-group row">
+            <label for="reason" class="col-lg-4 col-form-label required">
+              Reason for Inquiry: </label>
+            <div class="col-lg-5">
+              <select id="reason" name="reason">
+                <option value="catering" selected>Catering</option>
+                <option value="party">Private Party</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
 
-          <label for="info">Additional Information: </label>
-          <textarea id="info" name="info"></textarea><br /><br />
+          <div class="form-group row">
+            <label for="info" class="col-lg-4 col-form-label">
+              Additional Information:</label>
+            <div class="col-lg-5">
+              <textarea class="form-control" id="info"
+              name="info" placeholder="Additional information here"></textarea>
+            </div>
+          </div>
 
-          <p>Have you been to the restaurant?
-            <input type="radio" id="choice1" name="visit" value="no">
-            <label for="choice1">No</label>
-            <input type="radio" id="choice2" name="visit" value="yes">
-            <label for="choice2">Yes</label>
-          </p>
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-lg-4 col-form-label required">
+                Have you been to the restaurant?</legend>
+              <div class="col-lg-5">
+                <input type="radio" id="choice1" name="visit" value="no">
+                <label for="choice1">No</label>
+                <input type="radio" id="choice2" name="visit" value="yes">
+                <label for="choice2">Yes</label>
+              </div>
+            </div>
+          </fieldset>
 
-          <p>Best days to contact you:
-            <input type="checkbox" id="monday" name="day" value="monday">
-            <label for="monday">M </label>
-            <input type="checkbox" id="tuesday" name="day" value"tuesday">
-            <label for="tuesday">Tu </label>
-            <input type="checkbox" id="wednesday" name="day" value="wednesday">
-            <label for="wednesday">W </label>
-            <input type="checkbox" id="thursday" name="day" value"thursday">
-            <label for="thursday">Th </label>
-            <input type="checkbox" id="friday" name="day" value"friday">
-            <label for="friday">F </label>
-          </p>
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-lg-4 col-form-label">
+                Best days to contact you:</legend>
+              <div class="col-lg-5">
+                <input type="checkbox" id="monday" name="day" value="monday">
+                <label for="monday">M </label>
+                <input type="checkbox" id="tuesday" name="day" value"tuesday">
+                <label for="tuesday">Tu </label>
+                <input type="checkbox" id="wednesday" name="day" value="wednesday">
+                <label for="wednesday">W </label>
+                <input type="checkbox" id="thursday" name="day" value"thursday">
+                <label for="thursday">Th </label>
+                <input type="checkbox" id="friday" name="day" value"friday">
+                <label for="friday">F </label>
+              </div>
+            </div>
+          </fieldset>
 
-          <input type="submit" name="submit" value="Send Request">
+          <div class="form-group row">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-7">
+              <button type="submit" class="btn btn-primary">
+                Send Request</button>
+            </div>
+          </div>
+        <!--  <input type="submit" name="submit" value="Send Request">-->
 
       </section>
 
       <footer>
-        <hr />
         <p>2288 Garfield Street, Twin Peaks, Washington, 99152</p>
         <p>(509) 221-8958</p>
+        <p>&copy; 2019 Jack Elder. All rights reserved.</p>
       </footer>
     </main>
   </div>
