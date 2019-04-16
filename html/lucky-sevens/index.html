@@ -2,10 +2,10 @@
 <!--
 Name: Jack Elder
 Date Created: April 12, 2019
-Date Modified: April 12, 2019
-This is the home (and only) page of the Lucky Sevens game. The game allows
-the user to play Lucky Sevens repeatedly, as long as the user has money
-remaining, and displays the results of the games in a table.
+Date Modified: April 15, 2019
+This is the home (and only) page of the Lucky Sevens game website.
+The game allows the user to play Lucky Sevens repeatedly, as long as the user
+has money remaining, and displays a summary of the game results in a table.
 -->
 <html lang="en">
 <head>
@@ -13,26 +13,121 @@ remaining, and displays the results of the games in a table.
   <meta name="viewport" content="width=device-width, initial-scale=1
     shrink-to-fit=no">
   <title>Lucky Sevens</title>
+  <script type="text/JavaScript" src="scripts/luckySevens.js"></script>
   <!--Bootstrap CDN copied from Bootstrap download page,
   https://getbootstrap.com/docs/4.1/getting-started/download/-->
   <link rel="stylesheet"
   href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
   crossorigin="anonymous" />
-  <style>
+  <style> /*All styles internal because this website has only one page*/
     .jumbotron{
       background-color: #972a27;
+      color: #e5e6e8;
+    }
+    footer{
+      text-align:center;
+      background-color: #972a27;
+      color: #e5e6e8;
+      margin-top: 24px;
+      padding: 24px 0px 24px 0px;
+    }
+    .btn-primary{
       color: #fef9ff;
+      background-color: #972a27;
+      border-color: #972a27;
+      margin: 0px 12px 0px 12px;
+    }
+    .btn-primary:hover{
+      color:#000;
+      background-color: #972a27;
+      border-color: #972a27;
+    }
+    .btn-primary:not(:disabled):not(.disabled):active:focus,
+    .btn-primary:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-primary.dropdown-toggle:focus,
+    .btn-primary:not(:disabled):not(.disabled):active,
+    .btn-primary:not(:disabled):not(.disabled).active,
+    .show > .btn-primary.dropdown-toggle{
+      color:#000;
+      font-weight:bold;
+      background-color: #972a27;
+      border-color: #972a27;
+    }
+    #results{ /*formatting for  section containing results table */
+      border-top: 2px groove #000;
+      margin-top: 12px;
+    }
+    caption{
+      font-weight: bold;
+      font-size: 1.2em;
+      text-align: center;
+      caption-side: top;
+      color:#000;
+      padding: 12px;
+    }
+    form, h4{
+      font-family:"Trebuchet MS", helvetica, sans-serif;
     }
   </style>
-<body>
-  <header class="jumbotron">
-    <h1>Lucky Sevens</h1>
-    <h3 class="font-italic">By Jack Elder</h3>
-  </header>
+</head>
+<body onload="opening()">
+  <div class="container-fluid">
+    <header class="jumbotron">
+      <h1 style="font-family:impact, helvetica, sans-serif">Lucky Sevens</h1>
+      <h3 class="font-italic">By Jack Elder</h3>
+    </header>
 
+    <h4 style="text-align:center; font-weight: bold; font-size: 3.0em">
+      Lucky Sevens</h4>
+    <form name="startForm" onsubmit="return play();" onreset="resetForm();">
+      <div class="form-group form-inline row"> <!--Inline starting bet form-->
+        <div class="col-lg col-md col-sm"></div> <!--Centering content-->
+        <label for="startingBet" class="col-form-label"
+          style="padding-right:12px;">Starting Bet:</label>
+        <input type="float" class="form-control" id="startingBet">
+        <div class="col-lg col-md col-sm"></div>
+      </div>
+      <div class="form-group  row">
+        <div class="col-lg col-md col-sm"></div>
+        <button type="submit" id="playButton" class="btn btn-primary">Play</button>
+        <button type="reset" id="resetButton" class="btn btn-primary">Restart</button>
+        <div class="col-lg col-md col-sm"></div>
+      </div>
+    </form>
 
-  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-3 col-sm-2"></div>
+      <section id ="results" class="table-responsive col-lg-4 col-md-6 col-sm-8"
+        style="display:none"> <!--JavaScript activates display when results are generated-->
+        <table class="table table-striped">
+          <caption>Results</caption>
+          <tbody>
+            <tr>
+              <th>Starting Bet</th>
+              <td><span id="startingBetDisplay"></span></td>
+            </tr>
+            <tr>
+              <th>Total Rolls Before Going Broke</th>
+              <td><span id="totalRollsDisplay"></span></td>
+            </tr>
+            <tr>
+              <th>Highest Amount Won</th>
+              <td><span id="maxMoneyDisplay"></span></td>
+            </tr>
+            <tr>
+              <th>Roll Count at Highest Amount Won</th>
+              <td><span id="maxMoneyRollsDisplay"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2019 Jack Elder. All rights reserved.</p>
+    </footer>
+  </div>
   <!--CDN of jQuery, Popper.js and Bootstrap JavaScript
   from Bootstrap download page
   https://getbootstrap.com/docs/4.1/getting-started/download/-->
@@ -45,6 +140,5 @@ remaining, and displays the results of the games in a table.
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
   crossorigin="anonymous"></script>
-  </div>
 </body>
 </html>

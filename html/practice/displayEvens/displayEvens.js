@@ -48,7 +48,7 @@ function validateItems(){
     alert("Step size field must be filled in with a positive integer.");
     document.forms["evensForm"]["stepNum"].parentElement.className=
     "form-group has-error";
-    document.forms["evensForm"]["endNum"].focus();
+    document.forms["evensForm"]["stepNum"].focus();
     return false;
   }
   for(var i=startNum; i<=endNum; i+=stepNum){

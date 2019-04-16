@@ -25,10 +25,6 @@ header, footer{
   color: #FA9F42;
 }
 
-header {
-  padding: 24px 24px 72px 24px;
-}
-
 header h1{
   margin-top: 12px;
   padding-top:12px;
@@ -68,4 +64,8 @@ nav .btn:active, nav .btn:visited{
 
 .clear-float{
   clear:both;
+}
+
+.jumbotron{
+  background-color:#721817;
 }
