@@ -2,7 +2,7 @@
 <!--
   Name: Jack Elder
   Date Created: April 5, 2019
-  Date Modified: April 9, 2019
+  Date Modified: April 16, 2019
   This is the menu of the restaurant website for the RR diner.
 -->
 <html lang="en">
@@ -15,6 +15,7 @@
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
 
     <style>
@@ -48,13 +49,35 @@
   <body>
   <div class="container">
     <main>
+      <header class="jumbotron" id="newLocationAnnouncement">
+        <h2>We're expanding!</h2>
+        <h5>Find our newest location on <span style="color:#FA9F42;
+          font-weight:bold;">Whitman Avenue</span><br />
+          coming this September!</h5>
+      </header>
+
       <header class="jumbotron">
         <h4>Menu</h4>
         <h1>The Double R Diner</h1>
       </header>
 
+      <div class="carousel slide rounded-bottom" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <h5>We're opening a new location!</h5>
+          </div>
+          <div class="carousel-item">
+            <h5>We're rolling out our seasonal menu, with special options
+            for this season.</h5>
+          </div>
+          <div class="carousel-item">
+            <h5>The Drink of the Month is SG Special Brew.</h5>
+          </div>
+        </div>
+      </div>
+
       <nav>
-        <a class="btn pill" href="index.html">Home</a>
+        <a class="btn pill" href="index.html"><span class="fa fa-home"></span</a>
         <a class="btn pill" href="menu.html">Menu</a>
         <a class="btn pill" href="contact.html">Contact Us</a>
         <div class="clear-float"></div>
@@ -109,7 +132,7 @@
       </section>
 
       <footer>
-        <p>2288 Garfield Street, Twin Peaks, Washington, 99152</p>
+        <p>2288 Garfield Street, Twin Peaks, Washington 99152</p>
         <p>(509) 221-8958</p>
         <p>&copy; 2019 Jack Elder. All rights reserved.</p>
       </footer>

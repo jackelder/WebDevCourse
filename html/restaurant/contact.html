@@ -2,7 +2,7 @@
 <!--
   Name: Jack Elder
   Date Created: April 5, 2019
-  Date Modified: April 9, 2019
+  Date Modified: April 16, 2019
   This is the contact page of the restaurant website for the RR diner.
 -->
 <html lang="en">
@@ -11,15 +11,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1
       shrink-to-fit=no">
     <title>The RR Diner: Contact Us</title>
+    <script type="text/JavaScript" src="scripts/contactForm.js"></script>
     <link rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
     <style>
       .col-form-label{
         text-align:right;
         padding-top:0;
+        padding-right: 12px;
       }
       .btn-primary{
         color: #FA9F42;
@@ -47,20 +50,41 @@
   <body>
   <div class="container">
     <main>
+      <header class="jumbotron" id="newLocationAnnouncement">
+        <h2>We're expanding!</h2>
+        <h5>Find our newest location on <span style="color:#FA9F42;
+          font-weight:bold;">Whitman Avenue</span><br />
+          coming this September!</h5>
+      </header>
+
       <header class="jumbotron">
         <h4>Contact Us</h4>
         <h1>The Double R Diner</h1>
       </header>
 
+      <div class="carousel slide rounded-bottom" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <h5>We're opening a new location!</h5>
+          </div>
+          <div class="carousel-item">
+            <h5>We're rolling out our seasonal menu, with special options
+            for this season.</h5>
+          </div>
+          <div class="carousel-item">
+            <h5>The Drink of the Month is SG Special Brew.</h5>
+          </div>
+        </div>
+      </div>
+
       <nav>
-        <a class="btn pill" href="index.html">Home</a>
+        <a class="btn pill" href="index.html"><span class="fa fa-home"></span></a>
         <a class="btn pill" href="menu.html">Menu</a>
         <a class="btn pill" href="contact.html">Contact Us</a>
         <div class="clear-float"></div>
       </nav>
 
-      <section>
-        <form action="submit.html" method="POST">
+      <form name="contactForm" onsubmit="return validate();">
           <div class="form-group row">
             <label for="name" class="col-lg-4 col-form-label required">
               Name:</label>
@@ -133,13 +157,13 @@
               <div class="col-lg-5">
                 <input type="checkbox" id="monday" name="day" value="monday">
                 <label for="monday">M </label>
-                <input type="checkbox" id="tuesday" name="day" value"tuesday">
+                <input type="checkbox" id="tuesday" name="day" value="tuesday">
                 <label for="tuesday">Tu </label>
                 <input type="checkbox" id="wednesday" name="day" value="wednesday">
                 <label for="wednesday">W </label>
-                <input type="checkbox" id="thursday" name="day" value"thursday">
+                <input type="checkbox" id="thursday" name="day" value="thursday">
                 <label for="thursday">Th </label>
-                <input type="checkbox" id="friday" name="day" value"friday">
+                <input type="checkbox" id="friday" name="day" value="friday">
                 <label for="friday">F </label>
               </div>
             </div>
@@ -152,12 +176,10 @@
                 Send Request</button>
             </div>
           </div>
-        <!--  <input type="submit" name="submit" value="Send Request">-->
-
-      </section>
+      </form>
 
       <footer>
-        <p>2288 Garfield Street, Twin Peaks, Washington, 99152</p>
+        <p>2288 Garfield Street, Twin Peaks, Washington 99152</p>
         <p>(509) 221-8958</p>
         <p>&copy; 2019 Jack Elder. All rights reserved.</p>
       </footer>

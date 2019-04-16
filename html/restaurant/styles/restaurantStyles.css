@@ -1,7 +1,7 @@
 /*
 Name: Jack Elder
 Date Created: April 8, 2019
-Date Modified: April 9, 2019
+Date Modified: April 16, 2019
 This css document provides the styles for the RR diner restaurant website.
 */
 
@@ -16,12 +16,11 @@ Off-white: #fef9ff
 
 body {
   background-color: #fef9ff;
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: verdana, helvetica, sans-serif;
   margin: 0 auto;
 }
 
 header, footer{
-  background-color: #721817;
   color: #FA9F42;
 }
 
@@ -35,6 +34,7 @@ header h1{
 }
 
 footer{
+  background-color: #721817;
   text-align: center;
   padding: 12px 0px 12px 0px;
 }
@@ -42,7 +42,7 @@ footer{
 nav {
   border-top: 2px dashed #2B4162;
   border-bottom: 2px dashed #2B4162;
-  margin: 12px 0px 12px 0px;
+  margin-bottom: 12px;
   padding: 12px;
 }
 
@@ -68,4 +68,37 @@ nav .btn:active, nav .btn:visited{
 
 .jumbotron{
   background-color:#721817;
+  margin-bottom: 0px;
+}
+
+#newLocationAnnouncement{
+  padding-top: 48px;
+  background-color: #2B4162;
+  font-style:italic;
+  margin-bottom: 12px;
+}
+
+#newLocationAnnouncement h2{
+  font-family:impact, helvetica, sans-serif;
+  font-size: 2.8em;
+  text-align:left;
+}
+
+#newLocationAnnouncement h5{
+  font-family: verdana, helvetica, sans-serif;
+  color: #E0E0E2;
+  text-align:right;
+}
+
+.carousel, .slide{
+  padding: 12px 0px 12px 0px;
+  background-color: #E0E0E2;
+  text-align: center;
+  margin: 0px 12px 12px 12px;
+  border: 2px groove #721817;
+  border-top: none;
+}
+
+.carousel-item h5{
+  font-weight: bold;
 }
