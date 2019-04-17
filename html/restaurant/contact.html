@@ -3,7 +3,7 @@
   Name: Jack Elder
   Date Created: April 5, 2019
   Date Modified: April 16, 2019
-  This is the contact page of the restaurant website for the RR diner.
+  This is the contact page of the restaurant website for the Double R Diner.
 -->
 <html lang="en">
   <head>
@@ -12,16 +12,19 @@
       shrink-to-fit=no">
     <title>The RR Diner: Contact Us</title>
     <script type="text/JavaScript" src="scripts/contactForm.js"></script>
+    <!--Bootstrap CDN copied from Bootstrap download page,
+    https://getbootstrap.com/docs/4.1/getting-started/download/-->
     <link rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous" />
+    <!--CDN for Font Awesome v.4.7.0 from https://fontawesome.bootstrapcheatsheets.com/-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
     <style>
       .col-form-label{
         text-align:right;
-        padding-top:0;
+        padding-top:3px;
         padding-right: 12px;
       }
       .btn-primary{
@@ -35,14 +38,21 @@
         background-color: #2B4162;
         border-color: #2B4162;
       }
-      .btn-primary:active{ /*blue still showing up in active buttons*/
+      .required{
+        font-weight: bold;
+      }
+      /* Classes copied from  bootstrap-4.3.1-dist/css/bootstrap.class
+      to edit active button style and all related classes. */
+      .btn-primary:not(:disabled):not(.disabled):active:focus,
+      .btn-primary:not(:disabled):not(.disabled).active:focus,
+      .show > .btn-primary.dropdown-toggle:focus,
+      .btn-primary:not(:disabled):not(.disabled):active,
+      .btn-primary:not(:disabled):not(.disabled).active,
+      .show > .btn-primary.dropdown-toggle{
         color:#fef9ff;
         font-weight:bold;
         background-color: #2B4162;
         border-color: #2B4162;
-      }
-      .required{
-        font-weight: bold;
       }
     </style>
   </head>
@@ -57,12 +67,18 @@
           coming this September!</h5>
       </header>
 
-      <header class="jumbotron">
+      <header class="jumbotron" id="mainHeader">
         <h4>Contact Us</h4>
         <h1>The Double R Diner</h1>
+        <noscript>
+          <div class="alert alert-primary" role="disabledJSAlert" style=text-align:center;>
+            This page displays best with JavaScript
+            enabled. Your browser currently has JavaScript disabled.
+          </div>
+        </noscript>
       </header>
 
-      <div class="carousel slide rounded-bottom" data-ride="carousel">
+      <div class="carousel slide rounded" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <h5>We're opening a new location!</h5>
@@ -78,6 +94,7 @@
       </div>
 
       <nav>
+        <!--index link displays as home icon provided by Font Awesome-->
         <a class="btn pill" href="index.html"><span class="fa fa-home"></span></a>
         <a class="btn pill" href="menu.html">Menu</a>
         <a class="btn pill" href="contact.html">Contact Us</a>
@@ -85,113 +102,119 @@
       </nav>
 
       <form name="contactForm" onsubmit="return validate();">
-          <div class="form-group row">
-            <label for="name" class="col-lg-4 col-form-label required">
-              Name:</label>
-            <div class="col-lg-5">
-              <input type="text" class="form-control" id="name"
-              name="name" placeholder="John Doe">
-            </div>
-            <div class="col-lg-3">
-              <p><b>Note:</b> Bold fields are required.</p>
+        <div class="form-group row">
+          <div class="col-sm-5"></div>
+          <div class="col-sm-7">
+            <b>Note:</b> Bold fields are required.
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="name" class="col-sm-5 col-form-label required">
+            Name:</label>
+          <div class="col-sm-6 col-lg-4">
+            <input type="text" class="form-control" id="name"
+            name="name" placeholder="John Doe">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="email" class="col-sm-5 col-form-label required">
+            Email:</label>
+          <div class="col-sm-6 col-lg-4">
+            <input type="email" class="form-control" id="email"
+            name="email" placeholder="johndoe@email.com">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="phone" class="col-sm-5 col-form-label">
+            Phone:</label>
+          <div class="col-sm-6 col-lg-4">
+            <input type="text" class="form-control" id="phone"
+            name="phone" placeholder="(123) 456-7890">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="reason" class="col-sm-5 col-form-label required">
+            Reason for Inquiry: </label>
+          <div class="col-sm-6 col-lg-4">
+            <select id="reason" name="reason">
+              <option value="catering" selected>Catering</option>
+              <option value="party">Private Party</option>
+              <option value="feedback">Feedback</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="info" class="col-sm-5 col-form-label">
+            Additional Information:</label>
+          <div class="col-sm-6 col-lg-4">
+            <textarea class="form-control" id="info"
+            name="info" placeholder="Additional information here"></textarea>
+          </div>
+        </div>
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-sm-5 col-form-label required">
+              Have you been to the restaurant?</legend>
+            <div class="col-sm-6 col-lg-4">
+              <input type="radio" id="choice1" name="visit" value="no" checked>
+              <label for="choice1">No</label>
+              <input type="radio" id="choice2" name="visit" value="yes">
+              <label for="choice2">Yes</label>
             </div>
           </div>
+        </fieldset>
 
-          <div class="form-group row">
-            <label for="email" class="col-lg-4 col-form-label required">
-              Email:</label>
-            <div class="col-lg-5">
-              <input type="text" class="form-control" id="email"
-              name="email" placeholder="johndoe@email.com">
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-sm-5 col-form-label">
+              Best days to contact you:</legend>
+            <div class="col-sm-6 col-lg-4">
+              <input type="checkbox" id="monday" name="day" value="monday">
+              <label for="monday">M </label>
+              <input type="checkbox" id="tuesday" name="day" value="tuesday">
+              <label for="tuesday">Tu </label>
+              <input type="checkbox" id="wednesday" name="day" value="wednesday">
+              <label for="wednesday">W </label>
+              <input type="checkbox" id="thursday" name="day" value="thursday">
+              <label for="thursday">Th </label>
+              <input type="checkbox" id="friday" name="day" value="friday">
+              <label for="friday">F </label>
             </div>
           </div>
+        </fieldset>
 
-          <div class="form-group row">
-            <label for="phone" class="col-lg-4 col-form-label">
-              Phone:</label>
-            <div class="col-lg-5">
-              <input type="text" class="form-control" id="phone"
-              name="phone" placeholder="(123) 456-7890">
-            </div>
+        <div class="form-group row">
+          <div class="col-sm-5"></div>
+          <div class="col-sm-7">
+            <button type="submit" class="btn btn-primary">
+              Send Request</button>
           </div>
-
-          <div class="form-group row">
-            <label for="reason" class="col-lg-4 col-form-label required">
-              Reason for Inquiry: </label>
-            <div class="col-lg-5">
-              <select id="reason" name="reason">
-                <option value="catering" selected>Catering</option>
-                <option value="party">Private Party</option>
-                <option value="feedback">Feedback</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label for="info" class="col-lg-4 col-form-label">
-              Additional Information:</label>
-            <div class="col-lg-5">
-              <textarea class="form-control" id="info"
-              name="info" placeholder="Additional information here"></textarea>
-            </div>
-          </div>
-
-          <fieldset class="form-group">
-            <div class="row">
-              <legend class="col-lg-4 col-form-label required">
-                Have you been to the restaurant?</legend>
-              <div class="col-lg-5">
-                <input type="radio" id="choice1" name="visit" value="no">
-                <label for="choice1">No</label>
-                <input type="radio" id="choice2" name="visit" value="yes">
-                <label for="choice2">Yes</label>
-              </div>
-            </div>
-          </fieldset>
-
-          <fieldset class="form-group">
-            <div class="row">
-              <legend class="col-lg-4 col-form-label">
-                Best days to contact you:</legend>
-              <div class="col-lg-5">
-                <input type="checkbox" id="monday" name="day" value="monday">
-                <label for="monday">M </label>
-                <input type="checkbox" id="tuesday" name="day" value="tuesday">
-                <label for="tuesday">Tu </label>
-                <input type="checkbox" id="wednesday" name="day" value="wednesday">
-                <label for="wednesday">W </label>
-                <input type="checkbox" id="thursday" name="day" value="thursday">
-                <label for="thursday">Th </label>
-                <input type="checkbox" id="friday" name="day" value="friday">
-                <label for="friday">F </label>
-              </div>
-            </div>
-          </fieldset>
-
-          <div class="form-group row">
-            <div class="col-lg-5"></div>
-            <div class="col-lg-7">
-              <button type="submit" class="btn btn-primary">
-                Send Request</button>
-            </div>
-          </div>
+        </div>
       </form>
 
-      <footer>
+      <footer class="rounded-bottom">
         <p>2288 Garfield Street, Twin Peaks, Washington 99152</p>
         <p>(509) 221-8958</p>
         <p>&copy; 2019 Jack Elder. All rights reserved.</p>
       </footer>
     </main>
   </div>
+  <!--CDN of jQuery, Popper.js and Bootstrap JavaScript
+  from Bootstrap download page
+  https://getbootstrap.com/docs/4.1/getting-started/download/-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
-    <!--Bootstrap CDN JavaScript copied from Bootstrap download page-->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>

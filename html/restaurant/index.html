@@ -2,8 +2,8 @@
 <!--
   Name: Jack Elder
   Date Created: April 5, 2019
-  Date Modified: April 9, 2019
-  This is the home page of the restaurant website for the RR diner.
+  Date Modified: April 16, 2019
+  This is the home page of the restaurant website for the Double R diner.
 -->
 <html lang="en">
   <head>
@@ -11,10 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1
       shrink-to-fit=no">
     <title>The Double R Diner</title>
+    <!--Bootstrap CDN copied from Bootstrap download page,
+    https://getbootstrap.com/docs/4.1/getting-started/download/-->
     <link rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous" />
+    <!--CDN for Font Awesome v.4.7.0 from https://fontawesome.bootstrapcheatsheets.com/-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
     <style>
@@ -39,12 +42,18 @@
           coming this September!</h5>
       </header>
 
-      <header class="jumbotron">
+      <header class="jumbotron" id="mainHeader">
         <h4>Home Page</h4>
         <h1>The Double R Diner</h1>
+        <noscript>
+          <div class="alert alert-primary" role="disabledJSAlert" style=text-align:center;>
+            This page displays best with JavaScript
+            enabled. Your browser currently has JavaScript disabled.
+          </div>
+        </noscript>
       </header>
 
-      <div class="carousel slide rounded-bottom" data-ride="carousel">
+      <div class="carousel slide rounded" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <h5>We're opening a new location!</h5>
@@ -60,43 +69,47 @@
       </div>
 
       <nav>
+        <!--index link displays as home icon provided by Font Awesome-->
         <a class="btn pill" href="index.html"><span class="fa fa-home"></span></a>
         <a class="btn pill" href="menu.html">Menu</a>
         <a class="btn pill" href="contact.html">Contact Us</a>
         <div class="clear-float"></div>
       </nav>
 
-      <section>
+      <section class="rounded-top">
+        <!--Personal photo taken by Jack Elder-->
         <img src="images/falls.jpg" alt="Photo of Snoqualmie Falls"
           style="display: block; margin-left: auto;
           margin-right: auto; width:50%;" class="rounded-circle img-fluid">
         <br />
-          <div class="row">
-            <div class="col-lg-3 col-md-2 col-sm-1"></div>
-            <div class="col-lg-6 col-md-8 col-sm-10">
-              <p>The Double R Diner has been a beloved member of the
-                Twin Peaks community since it was established here on Garfield
-                Street in 1980. Owned and run since then by Norma, the Double R
-                Diner serves up coffee, pie, breakfast, lunch and dinner:
-                always fresh, filling and tasty American fare.</p>
-            </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-2 col-sm-1"></div>
+          <div class="col-lg-6 col-md-8 col-sm-10">
+            <p>The Double R Diner has been a beloved member of the
+              Twin Peaks community since it was established here on Garfield
+              Street in 1980. Owned and run since then by Norma, the Double R
+              Diner serves up coffee, pie, breakfast, lunch and dinner:
+              always fresh, filling and tasty American fare.</p>
           </div>
+        </div>
       </section>
 
-      <footer>
+      <footer class="rounded-bottom">
         <p>2288 Garfield Street, Twin Peaks, Washington 99152</p>
         <p>(509) 221-8958</p>
         <p>&copy; 2019 Jack Elder. All rights reserved.</p>
       </footer>
     </main>
   </div>
+  <!--CDN of jQuery, Popper.js and Bootstrap JavaScript
+  from Bootstrap download page
+  https://getbootstrap.com/docs/4.1/getting-started/download/-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
-    <!--Bootstrap CDN JavaScript copied from Bootstrap download page-->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>

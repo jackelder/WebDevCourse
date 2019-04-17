@@ -2,10 +2,9 @@
 Name: Jack Elder
 Date Created: April 8, 2019
 Date Modified: April 16, 2019
-This css document provides the styles for the RR diner restaurant website.
-*/
+This css document provides the styles for the Double R Diner restaurant website.
 
-/*Color Scheme
+Color Scheme
 Prune: #721817
 Neon Carrot: #FA9F42
 Deep Koamaru: #2B4162
@@ -13,6 +12,9 @@ Bottle Green: #0B6E4F
 Platinum: #E0E0E2
 Off-white: #fef9ff
 */
+
+/* restaurantStyles.css must be linked in HTML after Bootstrap CDN
+in order to update Bootstrap classes properly. */
 
 body {
   background-color: #fef9ff;
@@ -36,7 +38,7 @@ header h1{
 footer{
   background-color: #721817;
   text-align: center;
-  padding: 12px 0px 12px 0px;
+  padding: 24px 0px 12px 0px;
 }
 
 nav {
@@ -90,13 +92,15 @@ nav .btn:active, nav .btn:visited{
   text-align:right;
 }
 
+#mainHeader{
+}
+
 .carousel, .slide{
   padding: 12px 0px 12px 0px;
-  background-color: #E0E0E2;
+  background-color: #FA9F42;
   text-align: center;
-  margin: 0px 12px 12px 12px;
+  margin-bottom:12px;
   border: 2px groove #721817;
-  border-top: none;
 }
 
 .carousel-item h5{
